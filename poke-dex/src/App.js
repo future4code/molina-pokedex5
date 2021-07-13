@@ -1,9 +1,9 @@
-import { RotasList } from "./Route/route";
+import { RotasList } from "./Routes/route";
 
 function App() {
   return (
     <div>
-     <RotasList/>
+      <RotasList />
     </div>
   );
 }
