@@ -1,8 +1,8 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React from "react";
-import { Home } from "../Page/Home";
-import { Pokedex } from "../Page/pokedex";
-import { PokedexDetalis } from "../Page/pokedexDetalis";
+import { Home } from "../Pages/Home";
+import Pokedex from "../Pages/Pokedex/Pokedex";
+import { PokedexDetalis } from "../Pages/pokedexDetalis";
 
 export const RotasList = () => {
   return (

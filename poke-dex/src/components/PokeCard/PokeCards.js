@@ -1,8 +1,11 @@
 import React from "react";
 import useRequestData from "../../hooks/useRequestData";
 import { useHistory } from "react-router-dom";
-import {CardContainer} from "./styled"
-
+import {
+  CardContainer,
+  ButtonContainer,
+  ButtonCard,
+} from "./styled";
 
 const PokeCards = (props) => {
   const pokemon = useRequestData(props.url);
@@ -18,18 +21,20 @@ const PokeCards = (props) => {
   };
 
   return (
-    <CardContainer>
-      {pokemon && (
-        <div>
-          <img src={pokemon.sprites.front_default} alt={"pokemon"} />
-          <div>{pokemon.name}</div>
-          <div>
-            <button onClick={goToPokedex}> PokedexList</button>
-            <button onClick={goToPokedexDetalis}> PokedexDetalis</button>
-          </div>
-        </div>
-      )}
-    </CardContainer>
+    <div>
+      <div>
+        {pokemon && (
+          <CardContainer>
+            <img src={pokemon.sprites.front_default} alt={"pokemon"} />
+            <div>{pokemon.name}</div>
+            <ButtonContainer>
+              <ButtonCard onClick={goToPokedex}>Adicionar a Pokedex</ButtonCard>
+              <ButtonCard onClick={goToPokedexDetalis}>Ver Detalhes</ButtonCard>
+            </ButtonContainer>
+          </CardContainer>
+        )}
+      </div>
+    </div>
   );
 };
 
