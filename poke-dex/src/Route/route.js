@@ -8,15 +8,15 @@ export const RotasList = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={"/"}>
+        <Route path={"/"} exact>
           <Home />
         </Route>
 
-        <Route exact path={"/pokedex"}>
+        <Route path={"/pokedex"}>
           <Pokedex />
         </Route>
 
-        <Route exact path={"/pokedexDetalis"}>
+        <Route path={"/pokedexDetalis"}>
           <PokedexDetalis />
         </Route>
       </Switch>
