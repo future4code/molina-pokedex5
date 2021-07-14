@@ -1,23 +1,17 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useContext } from "react";
+import GlobalStateContext from "../Global/GlobalStateContext";
+import PokeCards from "../components/PokeCard/PokeCards";
 
 export const Home = () => {
+  const { states, setters, requests } = useContext(GlobalStateContext);
 
-    const history = useHistory()
-
-    const goToPokedex = () => {
-        history.push("/pokedex")
-    }
-
-    const goToPokedexDetalis = () => {
-        history.push("/pokedexDetalis")
-    }
-
-
-    return (
-        <div>
-            <button onClick={goToPokedex} > PokedexList</button>
-            <button onClick={goToPokedexDetalis}  > PokedexDetalis</button>
-        </div>
-    )
-}
+  return (
+    <div>
+      {states.pokemon &&
+        states.pokemon.map((item, index) => {
+          return <PokeCards url={item.url} />;
+        })}
+      {setters.pokemon}
+    </div>
+  );
+};

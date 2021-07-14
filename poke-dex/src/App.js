@@ -1,11 +1,14 @@
 import { RotasList } from "./Route/route";
+import  GlobalState from "./Global/GlobalState";
 
-function App() {
+const App = () => {
   return (
     <div>
-     <RotasList/>
+      <GlobalState>
+        <RotasList />
+      </GlobalState>
     </div>
   );
-}
+};
 
 export default App;
