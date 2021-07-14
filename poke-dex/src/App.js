@@ -1,4 +1,4 @@
-import { RotasList } from "./Route/route";
+import { RotasList } from "./Routes/route";
 import  GlobalState from "./Global/GlobalState";
 
 const App = () => {
