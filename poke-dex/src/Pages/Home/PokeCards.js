@@ -1,11 +1,7 @@
 import React from "react";
 import useRequestData from "../../hooks/useRequestData";
 import { useHistory } from "react-router-dom";
-import {
-  CardContainer,
-  ButtonContainer,
-  ButtonCard,
-} from "./styled";
+import { CardContainer, ButtonContainer, ButtonCard } from "./styled";
 
 const PokeCards = (props) => {
   const pokemon = useRequestData(props.url);
@@ -16,7 +12,7 @@ const PokeCards = (props) => {
     history.push("/pokedex");
   };
 
-  const goToPokedexDetalis = () => {
+  const goToPokedexDetails = () => {
     history.push("/pokedexDetalis");
   };
 
@@ -28,8 +24,15 @@ const PokeCards = (props) => {
             <img src={pokemon.sprites.front_default} alt={"pokemon"} />
             <div>{pokemon.name}</div>
             <ButtonContainer>
-              <ButtonCard onClick={goToPokedex}>Adicionar a Pokedex</ButtonCard>
-              <ButtonCard onClick={goToPokedexDetalis}>Ver Detalhes</ButtonCard>
+              <ButtonCard
+                // onClick={goToPokedex}
+                onClick={() =>
+                  props.addPokemonToPokedex(props.pokemon, props.index)
+                }
+              >
+                Adicionar a Pokedex
+              </ButtonCard>
+              <ButtonCard onClick={goToPokedexDetails}>Ver Detalhes</ButtonCard>
             </ButtonContainer>
           </CardContainer>
         )}
