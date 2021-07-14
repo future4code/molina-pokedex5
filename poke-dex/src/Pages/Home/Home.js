@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import GlobalStateContext from "../Global/GlobalStateContext";
-import PokeCards from "../components/PokeCard/PokeCards";
-import { MainContainer, Title } from "../components/PokeCard/styled";
+import GlobalStateContext from "../../Global/GlobalStateContext";
+import PokeCards from "./PokeCards";
+import { MainContainer, Title } from "./styled";
 
 export const Home = () => {
   const { states, setters, requests } = useContext(GlobalStateContext);
