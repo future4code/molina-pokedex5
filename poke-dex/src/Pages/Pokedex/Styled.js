@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   height: 15vh;
   width: 100vw;
-  background-color: silver;
+  background-color: #fe98cb;
 `;
 
 export const ButtonGoBack = styled.button`
@@ -41,22 +41,22 @@ export const CardContainer = styled.div`
   border: solid;
   justify-content: center;
   align-items: center;
+
+  img {
+    display: flex;
+    height: 160px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-export const ImagemContainer = styled.div`
-  display: flex;
-  height: 200px;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ButtonContainer = styled.div`
+export const ButtonPokemonContainer = styled.div`
   display: flex;
   height: 50px;
   width: 200px;
-  border-top: solid;
-  background-color: red;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ButtonCard = styled.button`
@@ -65,4 +65,5 @@ export const ButtonCard = styled.button`
   width: 200px;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 `;

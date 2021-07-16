@@ -5,6 +5,7 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
   const [pokemon, setPokemon] = useState([]);
+  const [pokedex, setPokedex] = useState([]);
 
   useEffect(() => {
     requests.getPokemons();
@@ -14,15 +15,21 @@ const GlobalState = (props) => {
     axios
       .get(`${baseUrl}/?limit=20`)
       .then((response) => {
-        setPokemon(response.data.results);
+        const pokemons = response.data.results.map((pokemon, index) => {
+          return {
+            ...pokemon,
+            id: index,
+          };
+        });
+        setPokemon(pokemons);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const states = { pokemon };
-  const setters = { setPokemon };
+  const states = { pokemon, pokedex };
+  const setters = { setPokemon, setPokedex };
   const requests = { getPokemons };
 
   const data = { states, setters, requests };
