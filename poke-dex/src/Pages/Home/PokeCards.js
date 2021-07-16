@@ -16,8 +16,8 @@ const PokeCards = (props) => {
     history.push("/pokedex");
   };
 
-  const goToPokedexDetalis = () => {
-    history.push("/pokedexDetalis");
+  const goToPokedexDetalis = (pokemonName) => {
+    history.push("/pokedexDetalis/" + pokemonName);
   };
 
   return (
@@ -29,7 +29,7 @@ const PokeCards = (props) => {
             <div>{pokemon.name}</div>
             <ButtonContainer>
               <ButtonCard onClick={goToPokedex}>Adicionar a Pokedex</ButtonCard>
-              <ButtonCard onClick={goToPokedexDetalis}>Ver Detalhes</ButtonCard>
+              <ButtonCard onClick={() => goToPokedexDetalis(pokemon.name)}>Ver Detalhes</ButtonCard>
             </ButtonContainer>
           </CardContainer>
         )}

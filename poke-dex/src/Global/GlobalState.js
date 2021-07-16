@@ -15,7 +15,6 @@ const GlobalState = (props) => {
       .get(`${baseUrl}/?limit=20`)
       .then((response) => {
         setPokemon(response.data.results);
-
       })
       .catch((err) => {
         console.log(err);
