@@ -8,7 +8,7 @@ import {
   ButtonHomeContainer,
   ButtonGoPokedex,
   ListPokemonsContainer,
-  ImagemSacana,
+  ImgPokedex,
   ImgPokemon,
 } from "./styled";
 import { useHistory } from "react-router-dom";
@@ -44,13 +44,13 @@ export const Home = () => {
         </ImgPokemon>
         <ButtonHomeContainer>
           <ButtonGoPokedex onClick={goToPokedex}>
-            <ImagemSacana>
+            <ImgPokedex>
               <img
                 src={
                   "https://toucantoco.com/blog/wp-content/uploads/2016/07/Capture-d%E2%80%99e%CC%81cran-2016-07-19-a%CC%80-15.27.31.png"
                 }
               />
-            </ImagemSacana>
+            </ImgPokedex>
           </ButtonGoPokedex>
         </ButtonHomeContainer>
       </HeaderContainer>

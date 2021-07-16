@@ -3,67 +3,28 @@ import styled from "styled-components";
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  height: 15vh;
+  height: 20vh;
   width: 100vw;
-  background-color: #fe98cb;
+  background-color: red;
 `;
 
-export const ButtonGoBack = styled.button`
+export const ButtonGoListPokemon = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   border: solid;
   height: 50px;
-  width: 300px;
-  margin-right: 300px;
+  width: 200px;
+  margin-right: 400px;
   margin-left: 50px;
+  border-radius: 15px;
+  background-color: #ffd700;
+  font-weight: bold;
+  border: none;
+
   :hover {
     cursor: pointer;
-    background-color: grey;
+    background-color: #00008b;
+    color: white;
   }
-`;
-
-export const MainContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  align-items: center;
-  height: 85vh;
-  width: 100vw;
-  overflow: auto;
-`;
-
-export const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 250px;
-  border: solid;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    display: flex;
-    height: 160px;
-    width: 200px;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-export const ButtonPokemonContainer = styled.div`
-  display: flex;
-  height: 50px;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ButtonCard = styled.button`
-  display: flex;
-  height: 50px;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
 `;

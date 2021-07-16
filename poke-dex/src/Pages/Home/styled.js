@@ -58,7 +58,7 @@ export const ButtonGoPokedex = styled.div`
   }
 `;
 
-export const ImagemSacana = styled.div`
+export const ImgPokedex = styled.div`
   display: flex;
   height: 14vh;
   width: 8vw;
@@ -68,8 +68,9 @@ export const ImagemSacana = styled.div`
   right: 200px;
 
   img {
-    border-radius: 90px;
+    border-radius: 20px;
     width: 7vw;
+    height: 10vh;
   }
 `;
 
@@ -100,7 +101,8 @@ export const CardContainer = styled.div`
   flex-direction: column;
   width: 220px;
   height: 250px;
-  border: solid;
+  box-shadow: 10px 5px 5px silver;
+  /* border: solid; */
   justify-content: center;
   align-items: center;
   border-radius: 20px;
@@ -132,6 +134,9 @@ export const ButtonCard = styled.button`
   align-items: center;
   margin-top: 20px;
   border-radius: 15px;
+  background-color: #ffd700;
+  font-weight: bold;
+  border: none;
 
   :hover {
     cursor: pointer;
