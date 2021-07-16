@@ -1,5 +1,9 @@
 import React from "react";
-import { CardContainer, ButtonPokemonContainer, ButtonCard } from "./Styled";
+import {
+  CardContainer,
+  ButtonPokemonContainer,
+  ButtonCard,
+} from "../Home/styled";
 import useRequestData from "../../hooks/useRequestData";
 import { useHistory } from "react-router-dom";
 

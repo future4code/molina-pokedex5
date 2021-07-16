@@ -2,7 +2,12 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import GlobalStateContext from "../../Global/GlobalStateContext";
 import PokeCard from "./PokeCard";
-import { HeaderContainer, ButtonGoBack, MainContainer } from "./Styled";
+import { HeaderContainer, ButtonGoListPokemon } from "./styled";
+import {
+  MainContainer,
+  ListPokemonsContainer,
+  ImgPokemon,
+} from "../Home/styled";
 
 function Pokedex() {
   const { states, setters } = useContext(GlobalStateContext);
@@ -26,28 +31,36 @@ function Pokedex() {
   return (
     <div>
       <HeaderContainer>
-        <ButtonGoBack onClick={goToHome}>
+        <ButtonGoListPokemon onClick={goToHome}>
           <h3>Lista de Pokemons</h3>
-        </ButtonGoBack>
-        <h1>POKEDEX</h1>
+        </ButtonGoListPokemon>
+        <ImgPokemon>
+          <img
+            src={
+              "https://cdn2.bulbagarden.net/upload/archive/4/4b/20100413180610%21Pok%C3%A9dex_logo.png"
+            }
+          />
+        </ImgPokemon>
       </HeaderContainer>
       <MainContainer>
-        {states.pokedex &&
-          states.pokedex
-            .sort((pokemonA, pokemonB) => {
-              return pokemonA.id - pokemonB.id;
-            })
-            .map((pokemon, index) => {
-              return (
-                <PokeCard
-                  key={pokemon.name}
-                  url={pokemon.url}
-                  pokemon={pokemon}
-                  removePokemonFromPokedex={removePokemonFromPokedex}
-                  index={index}
-                />
-              );
-            })}
+        <ListPokemonsContainer>
+          {states.pokedex &&
+            states.pokedex
+              .sort((pokemonA, pokemonB) => {
+                return pokemonA.id - pokemonB.id;
+              })
+              .map((pokemon, index) => {
+                return (
+                  <PokeCard
+                    key={pokemon.name}
+                    url={pokemon.url}
+                    pokemon={pokemon}
+                    removePokemonFromPokedex={removePokemonFromPokedex}
+                    index={index}
+                  />
+                );
+              })}
+        </ListPokemonsContainer>
       </MainContainer>
     </div>
   );
