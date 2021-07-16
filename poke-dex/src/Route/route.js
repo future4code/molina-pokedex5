@@ -2,8 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React from "react";
 import { Home } from "../Pages/Home/Home";
 import Pokedex from "../Pages/Pokedex/Pokedex";
-import { PokedexDetalis } from "../Pages/pokedexDetalis";
-
+import PokedexDetails from "../Pages/PokemonsDetalis/Detalis"
 export const RotasList = () => {
   return (
     <BrowserRouter>
@@ -16,9 +15,7 @@ export const RotasList = () => {
           <Pokedex />
         </Route>
 
-        <Route path={"/pokedexDetalis"}>
-          <PokedexDetalis />
-        </Route>
+        <Route path={"/pokedexDetalis/:pokemon"} component={PokedexDetails}/>
       </Switch>
     </BrowserRouter>
   );
