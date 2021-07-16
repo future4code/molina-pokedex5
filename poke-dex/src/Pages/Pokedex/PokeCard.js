@@ -1,21 +1,37 @@
 import React from "react";
-import {
-  CardContainer,
-  ButtonContainer,
-  ButtonCard,
-  ImagemContainer,
-} from "./Styled";
+import { CardContainer, ButtonPokemonContainer, ButtonCard } from "./Styled";
+import useRequestData from "../../hooks/useRequestData";
+import { useHistory } from "react-router-dom";
 
-function PokeCard() {
+function PokeCard(props) {
+  const pokemon = useRequestData(props.url);
+
+  const history = useHistory();
+
+  if (pokemon == null) {
+    return null;
+  }
+
+  const goToPokedexDetalis = (pokemonName) => {
+    history.push("/pokedexDetalis/" + pokemonName);
+  };
+
   return (
     <CardContainer>
-      <ImagemContainer>
-        <h4>POKE CARD</h4>
-      </ImagemContainer>
-      <ButtonContainer>
-        <ButtonCard>remover</ButtonCard>
-        <ButtonCard>detalhes</ButtonCard>
-      </ButtonContainer>
+      <img src={pokemon.sprites.front_default} alt={"pokemon"} />
+      <div>{props.pokemon.name}</div>
+      <ButtonPokemonContainer>
+        <ButtonCard
+          onClick={() =>
+            props.removePokemonFromPokedex(props.pokemon, props.index)
+          }
+        >
+          remover
+        </ButtonCard>
+        <ButtonCard onClick={() => goToPokedexDetalis(pokemon.name)}>
+          detalhes
+        </ButtonCard>
+      </ButtonPokemonContainer>
     </CardContainer>
   );
 }
